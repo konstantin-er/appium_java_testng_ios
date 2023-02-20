@@ -31,6 +31,20 @@
 
 * Основной тест написан в классе IOSCreateSessionTest . 
 
+* Запуск Appium на реальном устройстве. 
+Для этого понадобится само устройство, Xcode и действующая учетная запись разработчика Apple developer. (https://developer.apple.com/account)
+* Прописываем Desired Capabilities для связи с телефоном:
+{
+  "platformName": "iOS",
+  "appium:platformVersion": "15.7", // Версия реального устройства
+  "appium:deviceName": "00008030-0018709E1166666", // UDID телефона
+  "appium:automationName": "xcuitest",
+  "appium:bundleId": "com.apple.mobilecal",// бандел тестируемого приложения. Или можно использовать проект в формате .ipa
+  "appium:xcodeOrgId": "Y85X9MSDAR", //номер аккаунта разработчика (вязть отсюда https://developer.apple.com/account)
+  "appium:xcodeSigningId": "iPhone Developer", //Можно что угодно прописать
+  "appium:udid": "00008030-0018709E1166666"// UDID телефона
+}
+
 ## Running Tests
 
 * Can be run from IntelliJ the way tests normally are run
